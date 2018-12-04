@@ -1,5 +1,5 @@
 [1, 2, 3].forEach(function (value, index, array) {
-    console.log("Value:", value, "at index:", index);
+    // console.log("Value:", value, "at index:", index);
 });
 
 /*
