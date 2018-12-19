@@ -54,4 +54,6 @@ request(getJsonRequestObject(titanicUrl))
 console.log("All done");
 
 /* Promise.All
-
+takes an array of promises
+it rejects of one of the promises rejects
+*/
