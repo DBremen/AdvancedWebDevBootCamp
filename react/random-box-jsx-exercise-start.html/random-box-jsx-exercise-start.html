@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX Exercise</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/react@16.0.0-rc.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.0.0-rc.2/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      class RandomBox extends React.Component {
+        randomIntFromInterval(min, max) {
+          // min and max included
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+        render() {
+          const backgroundColor =
+            "#" + (((1 << 24) * Math.random()) | 0).toString(16);
+          return (
+            <div
+              className="card"
+              style={{
+                backgroundColor,
+                fontSize: `${this.randomIntFromInterval(10, 30)} + px`
+              }}
+            >
+              Random text
+            </div>
+          );
+        }
+      }
+
+      ReactDOM.render(<RandomBox />, document.getElementById("app"));
+    </script>
+  </body>
+</html>

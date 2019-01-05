@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+      svg {
+        border: 1px solid black;
+        width: 800px;
+        height: 450px;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+        most important = d command to draw the path (how to move the pencil)
+        Uppercase command letters coordinates = position where you want to go to
+        lowercase command letters coordinats = how far you want to move from current position
+
+        -M move (m x,y) - move the cursor to position x y - does not draw just moves the cursor
+        -L line L x y - draw line from current position - can be chained together
+        -Z close path
+        -Q quadratic Bezier curve
+        -C cubic Bezier curve
+        -A circular Arc
+        -H horizontal line (omit y)
+        -V vertical line (omit x)
+    -->
+    <svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg">
+      <!--
+      -move 400 right and 100 down 
+      -use lines to draw a triangle
+      -->
+      <path
+        d="M400 100
+               L100 200
+               L300 300
+               h-200
+               z"
+        stroke="purple"
+        stroke-width="3px"
+      />
+    </svg>
+  </body>
+</html>

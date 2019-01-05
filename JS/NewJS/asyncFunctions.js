@@ -69,7 +69,7 @@ new Movie("titanic").getMovie();
 // }
 
 //better start the requests in parallel and then await there resolved promises
-async function getMovie() {
+async function getMovie2() {
   var titanicUrl = "https://omdbapi.com?t=titanic&apikey=thewdb";
   var shrekUrl = "https://omdbapi.com?t=shrek&apikey=thewdb";
   console.log("starting");
@@ -80,3 +80,19 @@ async function getMovie() {
   console.log(movie1.Title);
   console.log(movie2.Title);
 }
+getMovie2();
+
+//or with Promise.all
+async function getMovie3() {
+    var titanicUrl = "https://omdbapi.com?t=titanic&apikey=thewdb";
+    var shrekUrl = "https://omdbapi.com?t=shrek&apikey=thewdb";
+    console.log("starting");
+    var movies = await Promise.all([
+        request(getJsonRequestObject(titanicUrl)),
+        request(getJsonRequestObject(shrekUrl))
+    ]);
+    console.log(movies[0].Title);
+    console.log(movies[1].Title);
+  }
+
+  getMovie3();
